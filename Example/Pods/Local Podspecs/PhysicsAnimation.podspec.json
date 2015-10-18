@@ -1,0 +1,25 @@
+{
+  "name": "PhysicsAnimation",
+  "version": "0.1.0",
+  "summary": "A short description of PhysicsAnimation.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/PhysicsAnimation",
+  "license": "MIT",
+  "authors": {
+    "amol-c": "chaudhari.amol.sopan@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/PhysicsAnimation.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "PhysicsAnimation": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
