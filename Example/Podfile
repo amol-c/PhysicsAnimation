@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'PhysicsAnimation_Example', :exclusive => true do
+  pod "PhysicsAnimation", :path => "../"
+end
+
+target 'PhysicsAnimation_Tests', :exclusive => true do
+  pod "PhysicsAnimation", :path => "../"
+
+  pod 'Quick', '~> 0.3.1'
+  pod 'Nimble'
+end
