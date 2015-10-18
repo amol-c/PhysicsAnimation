@@ -12,6 +12,7 @@
 		4C90CA87266067ECD355DAF4D1FE30CB /* Pods-PhysicsAnimation_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FED70A3401FC80870DE893614B5B51A2 /* Pods-PhysicsAnimation_Tests-dummy.m */; };
 		554063F540B456625820216B63A2D942 /* PhysicsControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15FFC8E1A82A53474724099B356E3D3 /* PhysicsControllerContext.swift */; };
 		59F1E7791BD351610025E652 /* DrawerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F1E7781BD351610025E652 /* DrawerAnimator.swift */; settings = {ASSET_TAGS = (); }; };
+		59F1E77C1BD441770025E652 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F1E77B1BD441770025E652 /* UIView.swift */; settings = {ASSET_TAGS = (); }; };
 		89D0D56CB4A64CBD6D12737653EF01B6 /* Pods-PhysicsAnimation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2E6DB934991780DF0567C9D3A6899 /* Pods-PhysicsAnimation_Example-dummy.m */; };
 		B9DCDC16F6DFA00F43AE51AC230182FB /* PhysicsAnimation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA483BBC809CA6F7D5C050A8352E4954 /* PhysicsAnimation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5A2F4F8A6B3175E7AC91069C6A4BB28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
@@ -59,6 +60,7 @@
 		4E602F48795673581886F239DE6F63D2 /* Pods-PhysicsAnimation_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PhysicsAnimation_Tests.modulemap"; sourceTree = "<group>"; };
 		55ED226DD4294F0CF01DDF146FFAA2FC /* PhysicsAnimation.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicsAnimation.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F1E7781BD351610025E652 /* DrawerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawerAnimator.swift; path = Animators/DrawerAnimator.swift; sourceTree = "<group>"; };
+		59F1E77B1BD441770025E652 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extensions/UIView.swift; sourceTree = "<group>"; };
 		6127CD5474A75EDC8952BA174E205338 /* Pods-PhysicsAnimation_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PhysicsAnimation_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		74F70899E007356B920299324F46CE30 /* Pods-PhysicsAnimation_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PhysicsAnimation_Example-resources.sh"; sourceTree = "<group>"; };
 		7FF834C469C83A19F7727BF6D9207F24 /* PhysicsAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhysicsAnimation-dummy.m"; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 			name = Animators;
 			sourceTree = "<group>";
 		};
+		59F1E77A1BD441610025E652 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59F1E77B1BD441770025E652 /* UIView.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		79D3996B7A11250329EC9AF011E7B065 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 		C11BD198FF40A2ED0C957A63788552AA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				59F1E77A1BD441610025E652 /* Extensions */,
 				59F1E7771BD3511A0025E652 /* Animators */,
 				B15FFC8E1A82A53474724099B356E3D3 /* PhysicsControllerContext.swift */,
 			);
@@ -434,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F1E77C1BD441770025E652 /* UIView.swift in Sources */,
 				F76F36AFB783C590224162410F01AE0A /* PhysicsAnimation-dummy.m in Sources */,
 				59F1E7791BD351610025E652 /* DrawerAnimator.swift in Sources */,
 				554063F540B456625820216B63A2D942 /* PhysicsControllerContext.swift in Sources */,
