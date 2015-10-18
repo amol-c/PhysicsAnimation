@@ -1,20 +1,14 @@
 PODS:
-  - Nimble (2.0.0)
   - PhysicsAnimation (0.1.0)
-  - Quick (0.3.1)
 
 DEPENDENCIES:
-  - Nimble
   - PhysicsAnimation (from `../`)
-  - Quick (~> 0.3.1)
 
 EXTERNAL SOURCES:
   PhysicsAnimation:
     :path: ../
 
 SPEC CHECKSUMS:
-  Nimble: 472e75466819eb8c06299233e87c694a9b51328a
-  PhysicsAnimation: a9420c263516d55fe1fc659a7f64a78bfbef7834
-  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+  PhysicsAnimation: bc2ee018d9b99810270dd2fb44a8a0861ecb0a73
 
 COCOAPODS: 0.39.0

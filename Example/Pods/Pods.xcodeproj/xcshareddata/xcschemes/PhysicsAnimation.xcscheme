@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BA83CCBB10C5F9E2683DF366'
+               BlueprintIdentifier = '486B20EC39275DBF5B35B86C'
                BlueprintName = 'PhysicsAnimation'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'PhysicsAnimation.framework'>
