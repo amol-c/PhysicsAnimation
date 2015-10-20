@@ -28,10 +28,10 @@ class DrawerAnimator: NSObject, UIDynamicAnimatorDelegate {
 
     // MARK: Internal
     func startGestureWith(var gestureRecognizerLocation: CGPoint, percent: CGFloat) {
-        let toViewControllerXTranslation = -CGRectGetWidth(transitionContext.containerView()?.bounds ?? CGRectZero) * TranslationFactor
+        let toViewControllerXTranslation = -CGRectGetWidth(transitionContext.containerView()?.frame ?? CGRectZero) * TranslationFactor
         self.toViewController.view.transform = CGAffineTransformMakeTranslation(toViewControllerXTranslation + gestureRecognizerLocation.x * TranslationFactor, 0)
 
-        gestureRecognizerLocation.y = CGRectGetMidY(self.fromViewController.view.bounds)
+        gestureRecognizerLocation.y = CGRectGetMidY(self.fromViewController.view.frame)
         self.attachmentBehavior.anchorPoint = gestureRecognizerLocation
 
         let transform = self.applyLinearTransform(percent, originalStart: 0, originalEnd: 1, newStart: 0, newEnd: InitialDimViewAlpha)
@@ -44,12 +44,12 @@ class DrawerAnimator: NSObject, UIDynamicAnimatorDelegate {
         self.animator.removeBehavior(self.attachmentBehavior)
         let velocity = gestureRecognizer.velocityInView(self.fromViewController.view)
         let velocityThreshold: CGFloat = 1000
-        let belowMidScreenBounds = gestureRecognizer.translationInView(self.containerView).x < self.fromViewController.view.bounds.size.width/2
+        let belowMidScreenBounds = gestureRecognizer.translationInView(self.containerView).x < self.fromViewController.view.frame.size.width/2
         // When the transition is failed as the user didnt swipe all the way to the left
         if(velocity.x < velocityThreshold && belowMidScreenBounds) {
             let toView = self.toViewController.view.snapshotViewAfterScreenUpdates(false)
 
-            let toViewControllerXTranslation = -CGRectGetWidth(self.toViewController.view?.bounds ?? CGRectZero) * TranslationFactor
+            let toViewControllerXTranslation = -CGRectGetWidth(self.toViewController.view?.frame ?? CGRectZero) * TranslationFactor
 
             UIView.animateWithDuration(self.transitionDuration(transitionContext), animations: { () -> Void in
                 self.toViewController.view.transform = CGAffineTransformMakeTranslation(toViewControllerXTranslation, 0)
@@ -96,7 +96,7 @@ class DrawerAnimator: NSObject, UIDynamicAnimatorDelegate {
 
         UIView.animateWithDuration(self.transitionDuration(transitionContext), animations: { () -> Void in
             self.toViewController.view.transform = CGAffineTransformIdentity
-            self.fromViewController.view.transform = CGAffineTransformMakeTranslation(self.toViewController.view.bounds.size.width, 0)
+            self.fromViewController.view.transform = CGAffineTransformMakeTranslation(self.toViewController.view.frame.size.width, 0)
             self.dimmingView.alpha = 0
             }, completion: { finished in
                 self.dimmingView.removeFromSuperview()
@@ -124,7 +124,7 @@ extension DrawerAnimator: UIViewControllerAnimatedTransitioning {
 
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         self.initializeWith(transitionContext)
-        let toViewControllerXTranslation = -CGRectGetWidth(transitionContext.containerView()?.bounds ?? CGRectZero) * TranslationFactor
+        let toViewControllerXTranslation = -CGRectGetWidth(transitionContext.containerView()?.frame ?? CGRectZero) * TranslationFactor
         toViewController.view.transform = CGAffineTransformMakeTranslation(toViewControllerXTranslation, 0)
         fromViewController.view.clipsToBounds = false
 
@@ -147,7 +147,7 @@ extension DrawerAnimator: UIViewControllerInteractiveTransitioning {
 
         self.animator.addBehavior(self.pushBehavior)
 
-        self.attachmentBehavior = UIAttachmentBehavior(item: self.fromViewController.view, attachedToAnchor: CGPointMake(0, CGRectGetMidY(self.fromViewController.view.bounds)))
+        self.attachmentBehavior = UIAttachmentBehavior(item: self.fromViewController.view, attachedToAnchor: CGPointMake(0, CGRectGetMidY(self.fromViewController.view.frame)))
         self.animator.addBehavior(self.attachmentBehavior)
 
         self.animator.delegate = self
@@ -166,7 +166,7 @@ extension DrawerAnimator: UIViewControllerInteractiveTransitioning {
         self.fromViewController.view.addLeftSideShadowWithFading()
 
         self.dimmingView?.removeFromSuperview()
-        self.dimmingView = UIView(frame: self.toViewController.view.bounds)
+        self.dimmingView = UIView(frame: self.toViewController.view.frame)
         dimmingView.backgroundColor = UIColor(white: 0, alpha: InitialDimViewAlpha)
         self.toViewController.view.addSubview(dimmingView)
     }

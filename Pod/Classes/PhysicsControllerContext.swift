@@ -30,16 +30,8 @@ public class PhysicsControllerContext: NSObject {
         self.initialize()
     }
 
-    // MARK: Private
-    private func initialize() {
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
-        panGestureRecognizer.delegate = self
-        panGestureRecognizer.maximumNumberOfTouches = 1
-        self.navigationController.view.addGestureRecognizer(panGestureRecognizer)
-        self.animator = DrawerAnimator()
-    }
-
-    private func pan(gestureRecognizer: UIPanGestureRecognizer) {
+    // MARK: Selector
+    func pan(gestureRecognizer: UIPanGestureRecognizer) {
         let view = self.navigationController.view
         let location = gestureRecognizer.locationInView(view)
 
@@ -78,6 +70,15 @@ public class PhysicsControllerContext: NSObject {
 
             return
         }
+    }
+
+    // MARK: Private
+    private func initialize() {
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
+        panGestureRecognizer.delegate = self
+        panGestureRecognizer.maximumNumberOfTouches = 1
+        self.navigationController.view.addGestureRecognizer(panGestureRecognizer)
+        self.animator = DrawerAnimator()
     }
 }
 
